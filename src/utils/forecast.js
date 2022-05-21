@@ -11,7 +11,8 @@ const forecast = (latitude, longitude, callback) => {
         } else {
             const temperature = body.current.temperature
             const rainChance = body.current.precip
-            callback(undefined, "It is currently " + temperature + " degrees out. There is a " + rainChance + "% chance of rain.")
+            const realFeel = body.current.feelslike
+            callback(undefined, "It is currently " + temperature + " degrees out with a real feel of " + realFeel + " degrees. There is a " + rainChance + "% chance of rain.")
         }
     })
 }
